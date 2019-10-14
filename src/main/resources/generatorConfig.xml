@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--<classPathEntry location="E:\jar\mysql-connector-java-5.1.47.jar"/>-->
+    <classPathEntry location="D:\work\jar\mysql-connector-java-5.1.39.jar"/>
+
+    <context id="developer" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="false"/><!-- 是否取消注释 -->
+            <property name="suppressDate" value="false"/> <!-- 是否生成注释代时间戳 -->
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://219.153.58.159:11023/social-mall-platform"
+                        userId="root"
+                        password="!QAZ2wsx"/>
+
+        <javaModelGenerator targetPackage="com.haishu.data.model" targetProject="src\\main\\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mybatis" targetProject="src\\main\\resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.haishu.data.mapper" targetProject="src\\main\\java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--<table tableName="t_banner_ad" domainObjectName="BannerAd"/>-->
+        <!--<table tableName="t_goods_basic_info" domainObjectName="GoodsBasicInfo"/>-->
+        <!--<table tableName="t_celebrity" domainObjectName="Celebrity"/>-->
+        <!--<table tableName="t_celebrity_tag" domainObjectName="CelebrityTag"/>-->
+        <!--<table tableName="t_picture" domainObjectName="Picture"/>-->
+        <!--<table tableName="t_goods_template_attribute_group" domainObjectName="GoodsTemplateAttributeGroup"/>-->
+        <!--<table tableName="t_goods_template_attribute" domainObjectName="GoodsTemplateAttribute"/>-->
+        <!--<table tableName="t_goods_type" domainObjectName="GoodsType"/>-->
+        <!--<table tableName="t_user_collect" domainObjectName="UserCollect"/>-->
+        <!--<table tableName="t_weixin_user" domainObjectName="WeixinUser"/>-->
+        <!--<table tableName="t_user_book_list" domainObjectName="UserBookList"/>-->
+        <!--<table tableName="t_civilian" domainObjectName="Civilian"/>-->
+        <!--<table tableName="t_civilian_tag" domainObjectName="CivilianTag"/>-->
+        <!--<table tableName="t_receiver_address" domainObjectName="ReceiverAddress"/>-->
+        <!--<table tableName="t_area_code" domainObjectName="AreaCode"/>-->
+        <!--<table tableName="t_customer_addr" domainObjectName="CustomerAddr"/>-->
+        <!--<table tableName="t_customer" domainObjectName="Customer"/>-->
+        <!--<table tableName="t_follower" domainObjectName="Follower"/>-->
+        <!--<table tableName="t_goods_logistics_com" domainObjectName="LogisticsCompany"/>-->
+        <!--<table tableName="t_integral_convert_type" domainObjectName="IntegralConvertType"/>-->
+        <!--<table tableName="t_integral_gain_record" domainObjectName="IntegralGainRecord"/>-->
+        <!--<table tableName="t_user_recommend" domainObjectName="UserRecommend"/>-->
+
+        <!--商品 -->
+        <!--<table tableName="t_goods_template" domainObjectName="GoodsTemplate"/>-->
+        <!--<table tableName="t_goods_standard" domainObjectName="GoodsStandard"/>-->
+        <!--<table tableName="t_goods_picture_relation" domainObjectName="GoodsPictureRelation"/>-->
+        <!--<table tableName="t_goods_standard_pro" domainObjectName="GoodsStandardPro"/>-->
+        <!--<table tableName="t_goods_attribute" domainObjectName="GoodsAttribute"/>-->
+        <!--<table tableName="t_goods_logistics" domainObjectName="GoodsLogistics"/>-->
+        <!--<table tableName="t_goods_logistics_relation" domainObjectName="GoodsLogisticsRelation"/>-->
+        <!--<table tableName="t_goods_type_relation" domainObjectName="GoodsTypeRelation"/>-->
+        <!--<table tableName="t_customer_comments" domainObjectName="CustomerComments"/>-->
+        <!--<table tableName="t_goods_temp_logistics" domainObjectName="GoodsTempLogistics"/>-->
+
+        <!-- 订单-->
+        <!--<table tableName="t_goods_aftersale_apply" domainObjectName="GoodsAftersaleApply" />-->
+        <!--<table tableName="t_goods_aftersale_picture" domainObjectName="GoodsAftersalePicture" />-->
+        <!--<table tableName="t_goods_order" domainObjectName="GoodsOrder" />-->
+        <!--<table tableName="t_goods_order_attached" domainObjectName="GoodsOrderAttached"/>-->
+        <!--<table tableName="t_goods_logistics_info" domainObjectName="GoodsLogisticsInfo"/>-->
+        <!--<table tableName="t_goods_order_code" domainObjectName="GoodsOrderCode"/>-->
+        <!--<table tableName="t_weixin_pay_oder" domainObjectName="WeixinPayOder"/>-->
+
+        <!--产品-->
+        <!--<table tableName="t_product" domainObjectName="Product"/>-->
+        <!--<table tableName="t_product_attribute" domainObjectName="ProductAttribute"/>-->
+        <!--<table tableName="t_product_picture_relation" domainObjectName="ProductPictureRelation"/>-->
+        <!--<table tableName="t_product_template" domainObjectName="ProductTemplate"/>-->
+        <!--<table tableName="t_product_template_attribute" domainObjectName="ProductTemplateAttribute"/>-->
+        <!--<table tableName="t_product_type" domainObjectName="ProductType"/>-->
+        <!--<table tableName="t_product_type_relation" domainObjectName="ProductTypeRelation"/>-->
+        <!--<table tableName="t_product_code" domainObjectName="ProductCode"/>-->
+        <!--<table tableName="t_product_supplier" domainObjectName="ProductSupplier"/>-->
+        <!--<table tableName="t_goods_logistics_com" domainObjectName="GoodsLogisticsCom"/>-->
+
+        <!--<table tableName="t_sys_message" domainObjectName="SysMessage"/>-->
+        <!--<table tableName="t_sys_config" domainObjectName="SysConfig"/>-->
+
+    </context>
+
+</generatorConfiguration>

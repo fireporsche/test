@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haishu.data.mapper.AdMapper">
+
+    <resultMap id="BaseResultMap" type="com.haishu.data.model.Ad">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="ad_place_id" jdbcType="INTEGER" property="adPlaceId"/>
+        <result column="goods_id" jdbcType="INTEGER" property="goodsId"/>
+
+        <result column="title" jdbcType="VARCHAR" property="title"/>
+        <result column="brief_introduction" jdbcType="VARCHAR" property="briefIntroduction"/>
+        <result column="url" jdbcType="VARCHAR" property="url"/>
+
+        <result column="big_picture_url" jdbcType="VARCHAR" property="bigPictureUrl"/>
+        <result column="valid_begin_time" jdbcType="TIMESTAMP" property="validBeginTime"/>
+        <result column="valid_end_time" jdbcType="TIMESTAMP" property="validEndTime"/>
+
+        <result column="sort" jdbcType="INTEGER" property="sort"/>
+        <result column="state" jdbcType="INTEGER" property="state"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    </resultMap>
+
+    <select id="findAllByAdPlaceCode" resultMap="BaseResultMap">
+        SELECT a.*
+        FROM `t_ad_place` ap
+                 INNER JOIN t_ad a ON ap.`id` = a.`ad_place_id`
+        WHERE ap.`code` = #{code}
+          AND a.state = 1
+          AND NOW() BETWEEN a.`valid_begin_time` AND a.`valid_end_time`
+        ORDER BY a.sort;
+    </select>
+
+</mapper>
